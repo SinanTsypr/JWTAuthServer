@@ -13,6 +13,6 @@ namespace JWTAuthServer.Core.Services
         Task<ResponseDto<TokenDto>> CreateTokenAsync(LoginDto loginDto);
         Task<ResponseDto<TokenDto>> CreateTokenByRefreshToken(string refreshToken);
         Task<ResponseDto<NoDataDto>> RevokeRefreshToken(string refreshToken);
-        Task<ResponseDto<ClientTokenDto>> CreateTokenByClient(ClientLoginDto clientLoginDto);
+        ResponseDto<ClientTokenDto> CreateTokenByClient(ClientLoginDto clientLoginDto);
     }
 }

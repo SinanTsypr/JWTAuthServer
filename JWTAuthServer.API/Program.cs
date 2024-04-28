@@ -1,4 +1,7 @@
 
+using JWTAuthServer.Core.Configurations;
+using JWTAuthServer.SharedLibrary.Configurations;
+
 namespace JWTAuthServer.API
 {
     public class Program
@@ -8,6 +11,8 @@ namespace JWTAuthServer.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.Configure<CustomTokenOption>(builder.Configuration.GetSection("TokenOptions"));
+            builder.Services.Configure<List<Client>>(builder.Configuration.GetSection("Clients"));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
