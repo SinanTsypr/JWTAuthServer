@@ -3,6 +3,7 @@ using JWTAuthServer.Core.DTOs;
 using JWTAuthServer.Core.Models;
 using JWTAuthServer.Core.Services;
 using JWTAuthServer.SharedLibrary.Configurations;
+using JWTAuthServer.SharedLibrary.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;

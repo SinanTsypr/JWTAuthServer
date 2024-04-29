@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JWTAuthServer.Service.Services
+namespace JWTAuthServer.SharedLibrary.Services
 {
     public static class SignService
     {

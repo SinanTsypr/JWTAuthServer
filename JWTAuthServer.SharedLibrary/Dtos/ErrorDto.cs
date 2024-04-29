@@ -8,18 +8,13 @@ namespace JWTAuthServer.SharedLibrary.Dtos
 {
     public class ErrorDto
     {
-        public List<String> Errors { get; private set; } = new();
+        public List<String> Errors { get; private set; } = new List<String>();
         public bool IsShow { get; set; }
-
-        public ErrorDto()
-        {
-            Errors = new List<String>();
-        }
 
         public ErrorDto(string error, bool isShow)
         {
             Errors.Add(error);
-            isShow = true;
+            IsShow = isShow;
         }
 
         public ErrorDto(List<string> errors, bool isShow)

@@ -9,6 +9,6 @@ namespace JWTAuthServer.Core.Models
 {
     public class UserApp : IdentityUser
     {
-        public string City { get; set; } = null!;
+        public string? City { get; set; }
     }
 }

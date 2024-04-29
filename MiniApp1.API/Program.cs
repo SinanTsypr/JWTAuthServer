@@ -1,4 +1,7 @@
 
+using JWTAuthServer.SharedLibrary.Configurations;
+using JWTAuthServer.SharedLibrary.Extensions;
+
 namespace MiniApp1.API
 {
     public class Program
@@ -8,6 +11,10 @@ namespace MiniApp1.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.Configure<CustomTokenOption>(builder.Configuration.GetSection("TokenOptions"));
+            var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<CustomTokenOption>();
+
+            builder.Services.AddCustomTokenAuth(tokenOptions!);
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -25,6 +32,7 @@ namespace MiniApp1.API
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
